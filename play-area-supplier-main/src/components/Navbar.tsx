@@ -6,9 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "Home", path: "/" },
+  { label: "Products", path: "/products" },
   { label: "About Us", path: "/about" },
-  { label: "Solutions", path: "/solutions" },
-  { label: "Our Process", path: "/process" },
+  { label: "Gallery", path: "/gallery" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -26,33 +26,26 @@ const Navbar = () => {
   useEffect(() => setMobileOpen(false), [location]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-card/95 backdrop-blur-md shadow-md" : "bg-transparent"
-      }`}
-    >
-      <div className="container flex items-center justify-between h-20">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center">
-            <span className="text-secondary-foreground font-display font-bold text-lg">P</span>
-          </div>
-          <span className={`font-display font-bold text-xl transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
-            Play Area<span className="text-secondary"> Supplier</span>
-          </span>
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm border-b border-gray-100">
+      <div className="container flex items-center justify-between h-16 md:h-[80px] lg:h-[90px]">
+        <Link to="/" className="flex items-center gap-2 max-w-[200px] md:max-w-none">
+          <img 
+            src="/images/Play Area Supplier Logo.png" 
+            alt="Play Area Supplier Logo" 
+            className="h-[45px] md:h-[60px] lg:h-[70px] w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center justify-end gap-6 flex-1">
           {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-3 py-2 rounded-lg text-[15px] font-medium transition-colors ${
                 location.pathname === item.path
                   ? "text-secondary"
-                  : scrolled
-                  ? "text-foreground hover:text-secondary"
-                  : "text-primary-foreground/80 hover:text-primary-foreground"
+                  : "text-gray-700 hover:text-secondary hover:bg-gray-50"
               }`}
             >
               {item.label}
@@ -63,7 +56,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`lg:hidden p-2 rounded-lg ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+          className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

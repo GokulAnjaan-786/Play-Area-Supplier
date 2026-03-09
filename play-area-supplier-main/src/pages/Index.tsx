@@ -114,7 +114,7 @@ const Index = () => {
                 <div className="p-6 space-y-3">
                   <h3 className="font-display font-bold text-xl text-foreground">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-                  <Link to="/solutions" className="inline-flex items-center gap-1 text-secondary text-sm font-semibold hover:gap-2 transition-all">
+                  <Link to="/products" className="inline-flex items-center gap-1 text-secondary text-sm font-semibold hover:gap-2 transition-all">
                     Learn More <ChevronRight size={16} />
                   </Link>
                 </div>

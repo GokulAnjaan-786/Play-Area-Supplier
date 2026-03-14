@@ -10,11 +10,11 @@ const Footer = () => {
 {/* Brand */}
 <div className="space-y-4">
   <div className="flex items-center gap-3">
-    <img
-      src="/images/Play%20Area%20Supplier%20Logo.png"
-      alt="Play Area Supplier Logo"
-      className="h-12 w-auto"
-    />
+   <img
+  src="/images/play-area-logo.png"
+  alt="Play Area Supplier Logo"
+  className="h-12 w-auto"
+/>
     <span className="font-display font-bold text-xl">
       Play Area<span className="text-secondary"> Supplier</span>
     </span>

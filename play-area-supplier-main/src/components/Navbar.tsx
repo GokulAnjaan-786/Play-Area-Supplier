@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -27,16 +26,20 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm border-b border-gray-100">
-      <div className="container flex items-center justify-between h-16 md:h-[80px] lg:h-[90px]">
+      
+      {/* Navbar Container */}
+      <div className="container flex items-center justify-between h-[80px] md:h-[100px] lg:h-[110px]">
+        
+        {/* Logo */}
         <Link to="/" className="flex items-center gap-2 max-w-[200px] md:max-w-none">
-          <img 
-            src="/images/Play Area Supplier Logo.png" 
-            alt="Play Area Supplier Logo" 
-            className="h-[45px] md:h-[60px] lg:h-[70px] w-auto object-contain"
+          <img
+            src="/images/Play Area Supplier Logo.png"
+            alt="Play Area Supplier Logo"
+            className="h-[60px] md:h-[80px] lg:h-[90px] w-auto object-contain"
           />
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center justify-end gap-6 flex-1">
           {navItems.map((item) => (
             <Link
@@ -53,7 +56,7 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Mobile toggle */}
+        {/* Mobile Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
@@ -62,7 +65,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -89,6 +92,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
     </header>
   );
 };

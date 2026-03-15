@@ -6,25 +6,24 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground">
       <div className="container py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          
+{/* Brand */}
+<div className="space-y-4">
+  <div className="flex items-center gap-3">
+   <img
+  src="/images/play-area-logo.png"
+  alt="Play Area Supplier Logo"
+  className="h-12 w-auto"
+/>
+    <span className="font-display font-bold text-xl">
+      Play Area<span className="text-secondary"> Supplier</span>
+    </span>
+  </div>
 
-          {/* Brand */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <img
-                src="/images/play-area-logo.png"
-                alt="Play Area Supplier Logo"
-                className="h-14 w-auto"
-              />
-              <span className="font-display font-bold text-xl">
-                Play Area<span className="text-secondary"> Supplier</span>
-              </span>
-            </div>
-
-            <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              We design, manufacture, and install indoor and outdoor play area
-              equipment for schools, communities, and commercial spaces.
-            </p>
-          </div>
+  <p className="text-primary-foreground/70 text-sm leading-relaxed">
+    We design, manufacture, and install indoor and outdoor play area equipment for schools, communities, and commercial spaces.
+  </p>
+</div>
 
           {/* Quick Links */}
           <div>
